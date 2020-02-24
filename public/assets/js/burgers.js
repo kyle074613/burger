@@ -10,7 +10,7 @@ $(function () {
             console.log(`Burger with id ${id} devoured.`);
 
             location.reload();
-        })
+        });
     });
 
     $(".burgerInput").on("submit", function (event) {
