@@ -20,13 +20,15 @@ $(function () {
             name: $(".newBurger").val().trim()
         };
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(function () {
-            console.log(`${newBurger} added.`);
+        if (newBurger.name != '') {
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function () {
+                console.log(`${newBurger} added.`);
 
-            location.reload();
-        });
+                location.reload();
+            });
+        };
     });
 })
