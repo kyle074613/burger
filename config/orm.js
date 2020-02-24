@@ -14,7 +14,7 @@ const orm = {
 
     //Adds a value to the database
     insertOne: function (table, col, val, cb) {
-        const queryString = `INSERT INTO ${table} (${col}) VALUES ?`;
+        const queryString = `INSERT INTO ${table} (${col}) VALUES (?)`;
         connection.query(queryString, val, function (err, result) {
             if (err) throw err;
 

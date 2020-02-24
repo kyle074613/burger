@@ -11,5 +11,22 @@ $(function () {
 
             location.reload();
         })
-    })
+    });
+
+    $(".burgerInput").on("submit", function (event) {
+        event.preventDefault();
+
+        const newBurger = {
+            name: $(".newBurger").val().trim()
+        };
+
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(function () {
+            console.log(`${newBurger} added.`);
+
+            location.reload();
+        });
+    });
 })
